@@ -1,0 +1,12 @@
+1) Symmetry tree
+2) Palindrome partition
+3) 3Sum
+4) Remove nth node from end of the list
+5) Generate paranthesis
+6) search in sorted array
+7) First and Last position of a element in sorted array
+8) Permutations
+9) Rotate image
+10)Jump Game
+
+
