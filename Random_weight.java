@@ -1,32 +1,10 @@
 class Solution {
-    Random rand;
-    int total=0;
-    int[] nums;
-    public Solution(int[] w) {
-        int weight=0;
-        this.nums=new int[w.length+1];
-        for(int i=0;i<w.length;i++){
-            weight+=w[i];
-            this.nums[i]=weight;
+    public int[][] reconstructQueue(int[][] people) {
+        Arrays.sort(people,(a,b)->a[0]==b[0]?a[1]-b[1]:b[0]-a[0]);
+        List<int[]> l=new ArrayList();
+        for(int[] p : people){
+            l.add(p[1],p);
         }
-        this.total=weight;
-    }
-    
-    public int pickIndex() {
-        if(total==0){return -1;}
-        this.rand=new Random();
-        int n=this.rand.nextInt(total);
-        for(int i=0;i<nums.length;i++){
-            if(n<nums[i]){
-                return i;
-            }
-        }
-        return -1;
+        return l.toArray(people);
     }
 }
-
-/**
- * Your Solution object will be instantiated and called as such:
- * Solution obj = new Solution(w);
- * int param_1 = obj.pickIndex();
- */
